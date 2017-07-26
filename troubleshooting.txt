@@ -1,0 +1,24 @@
+
+
+---------
+问题 1：
+---------
+运行 mygspread.py 中的 get_worksheets_from_sheet_name 方法，
+报错 "extern "Python": function Cryptography_locking_cb() called, but @ffi.def_extern() was not called in the current subinterpreter.  Returning 0."
+
+解决方法：
+命令行运行 
+pip install --upgrade pip
+pip install cryptography>=1.7 --upgrade
+
+重新运行 mygspread.py 中的 get_worksheets_from_sheet_name 方法，
+有新的报错 "AttributeError: 'module' object has no attribute 'SSL_ST_INIT'"
+
+解决方法：
+命令行运行
+pip uninstall pyopenssl
+之后再运行
+pip install pyopenssl
+
+重新运行 mygspread.py 中的 get_worksheets_from_sheet_name 方法，没有报错。
+
